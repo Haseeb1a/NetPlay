@@ -19,7 +19,7 @@ class _BottomBarState extends State<BottomBar> {
     const Home(),
     const HotView(),
      Download(),
-    const Searched()
+    const SearchScreen()
   ];
 
   @override
@@ -31,9 +31,10 @@ class _BottomBarState extends State<BottomBar> {
         body: bottomBarBarPages[_currentIndex],
         bottomNavigationBar: FloatingNavbar(
           
-          backgroundColor: Color.fromARGB(255, 0, 0, 0),
+          backgroundColor: Color.fromARGB(255, 61, 60, 60),
           onTap: (int val) => setState(() => _currentIndex = val),
           currentIndex: _currentIndex,
+          selectedItemColor: Colors.blue,
           items: [
             
             FloatingNavbarItem(icon: Icons.movie, title: 'Home'),

@@ -12,7 +12,7 @@ class AppBarWidget extends StatelessWidget {
     final Size size= MediaQuery.of(context).size;
     return Row(
       children: [
-        c10,
+        constantwidth10,
         Text(
           title,
           style: GoogleFonts.montserrat().copyWith(
@@ -26,7 +26,7 @@ class AppBarWidget extends StatelessWidget {
           color: Colors.white,
           size: 30,
         ),
-        c10,
+        constantwidth10,
         Container(
           width: 30,
           height: 30,

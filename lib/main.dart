@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix/helpers/colors.dart';
 import 'package:netflix/view/widgets/bottom_bar.dart';
 
 void main() {
@@ -7,24 +9,19 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        
-          primaryColor: Colors.white,
-          textTheme: const TextTheme(
-              bodySmall: TextStyle(color: Colors.white),
-              bodyMedium: TextStyle(color: Colors.white),
-              
-              
-              )),
-
-      // ignore: prefer_const_constructors
+        fontFamily: GoogleFonts.montserrat().fontFamily,
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(
+              color: Colors.white),
+        ),
+        scaffoldBackgroundColor: Colors.black,
+      ),
       home: BottomBar(),
     );
   }
