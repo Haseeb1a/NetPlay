@@ -1,58 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:netflix/helpers/constants.dart';
-class BottomSection extends StatelessWidget {
-  const BottomSection({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(10),
-          child: SizedBox(
-            width: double.infinity,
-            child: MaterialButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              color: Colors.blueAccent[700],
-              onPressed: () {},
-              child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10),
-                child: Text(
-                  "Set up",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(15),
-          child: MaterialButton(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            color: Colors.white,
-            onPressed: () {},
-            child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Text(
-                "See want you can download",
-                style: TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-        )
-      ],
-    );
-  }
-}
-
 class DownloadInformation2 extends StatelessWidget {
   const DownloadInformation2({super.key});
 
@@ -112,6 +60,58 @@ class DownloadInformation2 extends StatelessWidget {
   }
 }
 
+class BottomSection extends StatelessWidget {
+  const BottomSection({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(10),
+          child: SizedBox(
+            width: double.infinity,
+            child: MaterialButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              color: Colors.blueAccent[700],
+              onPressed: () {},
+              child: const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Text(
+                  "Set up",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(15),
+          child: MaterialButton(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            color: Colors.white,
+            onPressed: () {},
+            child: const Padding(
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Text(
+                "See want you can download",
+                style: TextStyle(
+                    color: Color.fromARGB(255, 0, 0, 0),
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+}
+
 class DownloadImagelist extends StatelessWidget {
   const DownloadImagelist({
     super.key,
@@ -132,10 +132,8 @@ class DownloadImagelist extends StatelessWidget {
         margin: margin,
         width: size.width * 0.4,
         height: size.width * 0.58,
-        // color: Colors.black,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            // border: BorderRadius.circular(50),
             image: DecorationImage(
                 image: NetworkImage(imageLists), fit: BoxFit.cover)),
       ),
