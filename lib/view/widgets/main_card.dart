@@ -8,15 +8,13 @@ class MainCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 150,
+   return Container(
+    margin: EdgeInsetsDirectional.symmetric(horizontal: 5),
+      width: 130,
       height: 250,
       decoration: BoxDecoration(
-        borderRadius: constRadius10,
-        image: DecorationImage(image: 
-        NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzJTkdPVAsp-i9GdusgSvj6LztRYsDQgzZkw&usqp=CAU')
-        )
-      ),
+          image: const DecorationImage(image: NetworkImage('https://m.media-amazon.com/images/I/81IRYGO1byL._AC_UL480_FMwebp_QL65_.jpg'),fit: BoxFit.cover),
+          borderRadius: BorderRadius.circular(5)),
     );
   }
 }

@@ -36,8 +36,8 @@ class _SearchScreenState extends State<SearchScreen> {
               style: const TextStyle(color: Colors.white),
             ),
             cheight10,
-            // Expanded(child: SearchIdelWidget()),
-            Expanded(child:SearchResultWidget() )
+            Expanded(child: SearchIdelWidget()),
+            // Expanded(child:SearchResultWidget() )
           ],
         ),
       )),

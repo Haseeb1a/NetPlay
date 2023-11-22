@@ -12,4 +12,6 @@ const cheight10 = SizedBox(
 const ch20 = SizedBox(
   height: 20,
 );
-BorderRadius constRadius10 = BorderRadius.circular(10);
+BorderRadius constRadius10 = BorderRadius.circular(20);
+
+const Cimage='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS4tgTDGQsHuGEvZBnaEBrIXfRBH9WjOThjjgxdWYfmW0uErF5r';
