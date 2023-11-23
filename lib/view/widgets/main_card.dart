@@ -14,7 +14,7 @@ class MainCard extends StatelessWidget {
       height: 250,
       decoration: BoxDecoration(
           image: const DecorationImage(image: NetworkImage('https://m.media-amazon.com/images/I/81IRYGO1byL._AC_UL480_FMwebp_QL65_.jpg'),fit: BoxFit.cover),
-          borderRadius: BorderRadius.circular(5)),
+          borderRadius: constRadius5),
     );
   }
 }

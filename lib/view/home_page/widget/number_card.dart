@@ -1,5 +1,7 @@
 import 'package:bordered_text/bordered_text.dart';
 import 'package:flutter/material.dart';
+import 'package:netflix/helpers/colors.dart';
+import 'package:netflix/helpers/constants.dart';
 
 class NumberCard extends StatelessWidget {
   const NumberCard({Key? key, required this.index});
@@ -23,7 +25,7 @@ class NumberCard extends StatelessWidget {
                         image: NetworkImage(
                             'https://m.media-amazon.com/images/I/81IRYGO1byL._AC_UL480_FMwebp_QL65_.jpg'),
                         fit: BoxFit.cover),
-                    borderRadius: BorderRadius.circular(5)),
+                    borderRadius: constRadius5),
               ),
             ],
           ),
@@ -33,13 +35,13 @@ class NumberCard extends StatelessWidget {
           left: 4,
           bottom: -8,
           child: BorderedText(
-              strokeColor: const Color.fromARGB(255, 255, 255, 255),
+              strokeColor: AppColors().whitetheme,
               strokeWidth: 10,
               child: Text(
                 "${index + 1}",
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 100,
+                    fontSize: 90,
                     color: Color.fromARGB(255, 0, 0, 0)),
               )))
     ]);

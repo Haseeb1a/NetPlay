@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/helpers/colors.dart';
 import 'package:netflix/helpers/constants.dart';
-import 'package:netflix/view/home_page/widget/custom_button_widget.dart';
 import 'package:netflix/view/home_page/widget/number_titile_card.dart';
 import 'package:netflix/view/widgets/background_card.dart';
+import 'package:netflix/view/widgets/horizontal_view.dart';
 
 import '../widgets/main_title_card.dart';
 
@@ -18,57 +19,41 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black,
-        body: Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Stack(children: [
-            ListView(
-              children: [
-                BackgroundCard(),
-                MainTitileCard(
-                  title: 'Release in the post year',
-                ),
-                cheight10,
-                MainTitileCard(
-                  title: 'Treading Now',
-                ),
-                cheight10,
-                NumberTitleCard(),
-              ],
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage(
+                  'https://i.pinimg.com/736x/1d/d9/cb/1dd9cba6ce2e105983ab53146e053153.jpg'),
+              fit: BoxFit.cover, // Adjust this based on your requirements
             ),
-          ]),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Stack(children: [
+              ListView(
+                children: const [
+                  BackgroundCard(),
+                  HorizontalList(
+                    title: 'realse in post',
+                  ),
+                  cheight10,
+                  MainTitileCard(
+                    title: 'Treading Now',
+                  ),
+                 constBOx5,
+                  NumberTitleCard(),
+                  cheight10,
+                  MainTitileCard(
+                    title: 'Treading Now',
+                  ),
+                  cheight10,
+                ],
+              ),
+            ]),
+          ),
         ));
   }
 }
-
-// class CustomButtonWidget extends StatelessWidget {
-//   final IconData icon;
-//   final String title;
-//   const CustomButtonWidget({
-//     required this.icon,
-//     required this.title
-
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       children: [
-//         Icon(
-//           icon,
-//           color: Colors.white,
-//           size: 30,
-//         ),
-//         Text(
-//           title,
-//           style: TextStyle(
-//             color: Colors.white,
-//             fontSize: 18,
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }
 
 class PlayButton extends StatelessWidget {
   const PlayButton({
@@ -78,20 +63,25 @@ class PlayButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton.icon(
-        style: ButtonStyle(
+        style:  ButtonStyle(
             backgroundColor: MaterialStatePropertyAll(
-          Colors.white,
+        AppColors().darkshade,
+      //  BorderSide()
         )),
         onPressed: () {},
         icon: Icon(
           Icons.play_arrow,
           size: 30,
+          color: AppColors().primarytheme,
         ),
         label: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Text(
             'play',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(
+              fontSize: 20,
+              color: AppColors().primarytheme,
+            ),
           ),
         ));
   }

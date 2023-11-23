@@ -12,10 +12,10 @@ class NumberTitleCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        MainTitle(
-          title: 'dhfksk',
+        const MainTitle(
+          title: 'Top 10',
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         LimitedBox(

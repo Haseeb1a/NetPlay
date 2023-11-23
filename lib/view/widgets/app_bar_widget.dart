@@ -1,3 +1,4 @@
+import 'package:bordered_text/bordered_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/helpers/colors.dart';
@@ -9,28 +10,27 @@ class AppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size= MediaQuery.of(context).size;
     return Row(
       children: [
         constantwidth10,
-        Text(
-          title,
-          style: GoogleFonts.montserrat().copyWith(
+          BorderedText(
+             strokeColor: AppColors().whitetheme,
+              strokeWidth: 1,
+          child: Text(title,style: GoogleFonts.montserrat().copyWith(
               fontSize: 30,
-              color: AppColors().whitetheme,
-              fontWeight: FontWeight.bold),
-        ),
+              color: AppColors().primarytheme,
+              fontWeight: FontWeight.bold),)),
         Spacer(),
-        const Icon(
+         Icon(
           Icons.cast,
-          color: Colors.white,
+          color: AppColors().whitetheme,
           size: 30,
         ),
         constantwidth10,
         Container(
           width: 30,
           height: 30,
-          color: Colors.black,
+          color: AppColors().darktheme,
         )
       ],
     );

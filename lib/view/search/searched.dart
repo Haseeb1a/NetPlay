@@ -24,20 +24,20 @@ class _SearchScreenState extends State<SearchScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CupertinoSearchTextField(
-              backgroundColor: Colors.grey.withOpacity(0.4),
-              prefixIcon: const Icon(
+              backgroundColor: AppColors().geryshade.withOpacity(0.4),
+              prefixIcon:  Icon(
                 CupertinoIcons.search,
-                color: Colors.grey,
+                color: AppColors().geryshade,
               ),
-              suffixIcon: const Icon(
+              suffixIcon:  Icon(
                 CupertinoIcons.xmark_circle_fill,
-                color: Colors.grey,
+                color: AppColors().geryshade,
               ),
-              style: const TextStyle(color: Colors.white),
+              style:  TextStyle(color: AppColors().whitetheme),
             ),
             cheight10,
-            Expanded(child: SearchIdelWidget()),
-            // Expanded(child:SearchResultWidget() )
+            // Expanded(child: SearchIdelWidget()),
+            const Expanded(child:SearchResultWidget() )
           ],
         ),
       )),

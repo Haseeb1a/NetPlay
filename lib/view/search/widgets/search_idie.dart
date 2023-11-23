@@ -1,3 +1,4 @@
+import 'package:bordered_text/bordered_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/helpers/colors.dart';
@@ -15,26 +16,28 @@ class SearchIdelWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         cwidth20,
-        Text(
-          'Top Searches',
-           style: GoogleFonts.montserrat().copyWith(
-              fontSize: 30,
-              color: AppColors().whitetheme,
-              fontWeight: FontWeight.bold),
-        ),
+        BorderedText(
+             strokeColor: Color.fromARGB(255, 255, 255, 255),
+              strokeWidth: 1,
+          child: Text('Top Searches',style: GoogleFonts.montserrat().copyWith(
+              fontSize: 28,
+              color: AppColors().primarytheme,
+              fontWeight: FontWeight.bold),)),
+        // Text(
+        //   'Top Searches',
+        //   style: GoogleFonts.montserrat().copyWith(
+        //       fontSize: 30,
+        //       color: AppColors().primarytheme,
+        //       fontWeight: FontWeight.bold),
+        // ),
         cheight10,
         Expanded(
-          child: GridView.count(
-            physics: AlwaysScrollableScrollPhysics(),
-            // shrinkWrap: true,
-         
-          mainAxisSpacing: 6,
-          // crossAxisSpacing: ,
-          childAspectRatio: 4/5,
-             crossAxisCount: 3,
-             children: List.generate(20, (index) =>TopSearchTile())
-          )
-        )
+            child: GridView.count(
+                physics: const AlwaysScrollableScrollPhysics(),
+                mainAxisSpacing: 6,
+                childAspectRatio: 4 / 5,
+                crossAxisCount: 3,
+                children: List.generate(20, (index) => const TopSearchTile())))
       ],
     );
   }
@@ -49,16 +52,15 @@ class TopSearchTile extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: screenWidth*0.3,
-          height:screenWidth*0.62,
-          decoration:  BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            // color: Colors.green,
-              image: DecorationImage(
+          width: screenWidth * 0.3,
+          height: screenWidth * 0.62,
+          decoration: BoxDecoration(
+              borderRadius: constRadius5,
+              image: const DecorationImage(
                 fit: BoxFit.cover,
-            image: NetworkImage('https://m.media-amazon.com/images/I/81IRYGO1byL._AC_UL480_FMwebp_QL65_.jpg'),
-            
-          )),
+                image: NetworkImage(
+                    'https://m.media-amazon.com/images/I/81IRYGO1byL._AC_UL480_FMwebp_QL65_.jpg'),
+              )),
         )
       ],
     );

@@ -1,8 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:netflix/helpers/colors.dart';
-import 'package:netflix/helpers/constants.dart';
 import 'package:netflix/view/downloads/widgets/download_details.dart';
 import 'package:netflix/view/widgets/app_bar_widget.dart';
 
@@ -16,7 +13,7 @@ class Download extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: Colors.black,
+          backgroundColor: AppColors().darktheme,
           appBar: PreferredSize(
               preferredSize: const Size.fromHeight(50),
               child: AppBarWidget(

@@ -1,3 +1,4 @@
+import 'package:bordered_text/bordered_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/helpers/colors.dart';
@@ -16,19 +17,17 @@ class SearchResultWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Movies & Tv',
-            style: GoogleFonts.montserrat().copyWith(
-                fontSize: 30,
-                color: AppColors().whitetheme,
-                fontWeight: FontWeight.bold),
-          ),
+             BorderedText(
+             strokeColor: Color.fromARGB(255, 255, 255, 255),
+              strokeWidth: 1,
+          child: Text('Movies & Tv',style: GoogleFonts.montserrat().copyWith(
+              fontSize: 28,
+              color: AppColors().primarytheme,
+              fontWeight: FontWeight.bold),)),
           cheight10,
           Expanded(
               child: GridView.count(
-                  physics: AlwaysScrollableScrollPhysics(),
-                  // shrinkWrap: true,
-
+                  // physics: AlwaysScrollableScrollPhysics(),
                   mainAxisSpacing: 10,
                    crossAxisSpacing:10 ,
                   childAspectRatio: 1 / 1,
@@ -52,9 +51,8 @@ class ScreenResultTile extends StatelessWidget {
           width: screenWidth * 0.45,
           height: screenWidth * 0.5,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              // color: Colors.green,
-              image: DecorationImage(
+              borderRadius: constRadius5,
+              image: const DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(
                     'https://m.media-amazon.com/images/I/81IRYGO1byL._AC_UL480_FMwebp_QL65_.jpg'),

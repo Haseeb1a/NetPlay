@@ -17,7 +17,7 @@ class MainTitileCard extends StatelessWidget {
         MainTitle(
           title: title,
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         LimitedBox(
