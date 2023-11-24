@@ -34,19 +34,19 @@ class _HomeState extends State<Home> {
                 children: const [
                   BackgroundCard(),
                   HorizontalList(
-                    title: 'realse in post',
+                    title: 'Realse in post',
                   ),
-                  cheight10,
+                  cHeight10,
                   MainTitileCard(
                     title: 'Treading Now',
                   ),
-                 constBOx5,
+                 heightBox5,
                   NumberTitleCard(),
-                  cheight10,
+                  cHeight10,
                   MainTitileCard(
                     title: 'Treading Now',
                   ),
-                  cheight10,
+                  cHeight10,
                 ],
               ),
             ]),

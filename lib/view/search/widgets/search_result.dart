@@ -24,7 +24,7 @@ class SearchResultWidget extends StatelessWidget {
               fontSize: 28,
               color: AppColors().primarytheme,
               fontWeight: FontWeight.bold),)),
-          cheight10,
+          cHeight10,
           Expanded(
               child: GridView.count(
                   // physics: AlwaysScrollableScrollPhysics(),

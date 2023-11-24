@@ -12,8 +12,11 @@ class NumberTitleCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const MainTitle(
-          title: 'Top 10',
+        const Padding(
+          padding: EdgeInsets.all(5.0),
+          child: MainTitle(
+            title: 'Top 10',
+          ),
         ),
         const SizedBox(
           height: 5,

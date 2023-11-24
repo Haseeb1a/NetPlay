@@ -32,7 +32,7 @@ class NumberCard extends StatelessWidget {
         ],
       ),
       Positioned(
-          left: 4,
+          left: 10,
           bottom: -8,
           child: BorderedText(
               strokeColor: AppColors().whitetheme,

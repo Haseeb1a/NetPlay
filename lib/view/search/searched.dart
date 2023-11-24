@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:netflix/helpers/colors.dart';
 import 'package:netflix/helpers/constants.dart';
-import 'package:netflix/view/search/widgets/search_idie.dart';
 import 'package:netflix/view/search/widgets/search_result.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -35,7 +34,7 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
               style:  TextStyle(color: AppColors().whitetheme),
             ),
-            cheight10,
+            cHeight10,
             // Expanded(child: SearchIdelWidget()),
             const Expanded(child:SearchResultWidget() )
           ],

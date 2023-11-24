@@ -109,7 +109,7 @@ class CommingSoonWidget extends StatelessWidget {
                       fontSize: 25,
                       fontWeight: FontWeight.bold),
                 ),
-                cheight10,
+                cHeight10,
                 Text(
                   'Jujutsu Kaisen is a highly acclaimed shonen anime and manga series that has gained widespread popularity among fans for its stunning animation, fast-paced action, and complex characters. In this list, we’ll be outlining all the story arcs in the anime series, from the beginning of the story to its current point in the manga.',
                   style: TextStyle(color: AppColors().whitetheme, fontSize: 15,fontFamily: GoogleFonts.montserrat().fontFamily,),

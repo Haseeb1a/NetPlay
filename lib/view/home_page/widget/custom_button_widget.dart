@@ -23,6 +23,7 @@ class CustomButtonWidget extends StatelessWidget {
           title,
           style: TextStyle(
             color: AppColors().whitetheme,
+            fontWeight: FontWeight.bold,
             fontSize: 18,
           ),
         ),

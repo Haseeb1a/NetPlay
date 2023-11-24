@@ -12,7 +12,7 @@ class AppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        constantwidth10,
+        cWidth10 ,
           BorderedText(
              strokeColor: AppColors().whitetheme,
               strokeWidth: 1,
@@ -26,7 +26,7 @@ class AppBarWidget extends StatelessWidget {
           color: AppColors().whitetheme,
           size: 30,
         ),
-        constantwidth10,
+       cWidth10 ,
         Container(
           width: 30,
           height: 30,

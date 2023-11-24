@@ -6,8 +6,10 @@ import 'package:netflix/helpers/constants.dart';
 
 PreferredSize Tap_Appbar() {
     return PreferredSize(
+
           preferredSize: const Size.fromHeight(90),
           child: AppBar(
+
             backgroundColor: AppColors().darktheme,
             title:   BorderedText(
            strokeColor: const Color.fromARGB(255, 255, 255, 255),
@@ -22,7 +24,7 @@ PreferredSize Tap_Appbar() {
                 color: AppColors().whitetheme,
                 size: 30,
               ),
-              constantwidth10,
+              cWidth10 ,
               Container(
                 width: 30,
                 height: 30,
@@ -30,6 +32,9 @@ PreferredSize Tap_Appbar() {
               )
             ],
             bottom: TabBar(
+
+              indicatorPadding: EdgeInsets.only(left: 10,right: 10),
+              // isScrollable: true,
               unselectedLabelColor: AppColors().primarytheme,
               labelColor: AppColors().darktheme,
               labelStyle:

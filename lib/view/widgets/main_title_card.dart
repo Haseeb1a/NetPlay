@@ -11,23 +11,26 @@ class MainTitileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        MainTitle(
-          title: title,
-        ),
-        const SizedBox(
-          height: 5,
-        ),
-        LimitedBox(
-          maxHeight: 200,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: List.generate(10, (index) => const MainCard()),
+    return Padding(
+      padding: const EdgeInsets.all(3.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          MainTitle(
+            title: title,
           ),
-        )
-      ],
+          const SizedBox(
+            height: 5,
+          ),
+          LimitedBox(
+            maxHeight: 200,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: List.generate(10, (index) => const MainCard()),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

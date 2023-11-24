@@ -15,7 +15,7 @@ class SearchIdelWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        cwidth20,
+        cWidth20,
         BorderedText(
              strokeColor: Color.fromARGB(255, 255, 255, 255),
               strokeWidth: 1,
@@ -30,7 +30,7 @@ class SearchIdelWidget extends StatelessWidget {
         //       color: AppColors().primarytheme,
         //       fontWeight: FontWeight.bold),
         // ),
-        cheight10,
+        cHeight10,
         Expanded(
             child: GridView.count(
                 physics: const AlwaysScrollableScrollPhysics(),

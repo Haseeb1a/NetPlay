@@ -17,12 +17,12 @@ Widget buildComingSoon() {
               style: TextStyle(
                   color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold,),
             ),
-            cheight10,
+            cHeight10,
              Text(
               'Jujutsu Kaisen is a highly acclaimed shonen anime and manga series that has gained widespread popularity among fans for its stunning animation, fast-paced action, and complex characters. In this list, we’ll be outlining all the story arcs in the anime series, from the beginning of the story to its current point in the manga.',
               style: TextStyle(color: Colors.white, fontSize: 15,fontFamily: GoogleFonts.aBeeZee().fontFamily,),
             ),
-            ch20,
+            cHeight20,
             const VideoWidget(),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -34,13 +34,13 @@ Widget buildComingSoon() {
                     color:AppColors().primarytheme,
                     size: 25,
                   ),
-                  cwidth20,
+                  cWidth20,
                   Icon(
                     Icons.add,
                     color: AppColors().whitetheme,
                     size: 27,
                   ),
-                  cwidth20,
+                  cWidth20,
                   Icon(
                     Icons.play_arrow,
                     color: AppColors().primarytheme,

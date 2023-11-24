@@ -9,6 +9,7 @@ class BackgroundCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return Stack(children: [
       Container(
         width: double.infinity,
@@ -17,8 +18,21 @@ class BackgroundCard extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: constRadius7,
             image: const DecorationImage(
-                image: NetworkImage(Cimage), fit: BoxFit.cover)),
+                image: NetworkImage(cimage), fit: BoxFit.cover)),
       ),
+      Positioned(
+          bottom: 0,
+          child: Container(
+            height: 150,
+            width: size.width,
+            // width: double.infinity,
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color.fromARGB(255, 0, 0, 0).withOpacity(0), Colors.black],
+            )),
+          )),
       Positioned(
         top: 0,
         left: 0,
@@ -26,7 +40,14 @@ class BackgroundCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(bottom: 13),
           child: Container(
-            color: AppColors().darktheme,
+            height: 25,
+             decoration: BoxDecoration(
+                gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [AppColors().darktheme, Color.fromARGB(255, 0, 0, 0).withOpacity(0)],
+            )),
+            // color: AppColors().darktheme,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -72,7 +93,7 @@ class BackgroundCard extends StatelessWidget {
               ),
               PlayButton(),
               CustomButtonWidget(
-                title: 'info',
+                title: 'Info',
                 icon: Icons.info,
               ),
             ],
