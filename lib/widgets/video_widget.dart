@@ -3,8 +3,8 @@ import 'package:netflix/helpers/api_key.dart';
 import 'package:netflix/helpers/colors.dart';
 
 class VideoWidget extends StatelessWidget {
-  String ?posterPath;
-   VideoWidget({
+ final String ?posterPath;
+ const  VideoWidget({
     required this.posterPath,
     super.key,
   });

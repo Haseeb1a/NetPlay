@@ -52,11 +52,6 @@ class Home extends StatelessWidget {
                     title: 'Popular Moveis',
                     imageList: homeScreenProvider.popularMoviesImages,
                   ),
-                  // MainTitileCard(
-                  //   imageList:  homeScreenProvider.popularMoviesImages,
-                  //   title: 'Popular Moveis',
-                  // ),
-                  
                 ],
               ),
             ]),

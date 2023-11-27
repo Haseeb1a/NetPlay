@@ -1,24 +1,46 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:netflix/controller/home_controller.dart';
 import 'package:netflix/helpers/colors.dart';
 import 'package:netflix/helpers/constants.dart';
 import 'package:netflix/view/home_page/home_page.dart';
 import 'package:netflix/view/home_page/widget/custom_button_widget.dart';
+import 'package:provider/provider.dart';
 
 class BackgroundCard extends StatelessWidget {
   const BackgroundCard({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final homeScreenProvider = Provider.of<HomeScreenController>(context);
     final Size size = MediaQuery.of(context).size;
     return Stack(children: [
-      Container(
-        width: double.infinity,
-        height: 500,
-        // color: Colors.blue,
-        decoration: BoxDecoration(
-            borderRadius: constRadius7,
-            image: const DecorationImage(
-                image: NetworkImage(cimage), fit: BoxFit.cover)),
+      CarouselSlider(
+        options: CarouselOptions(
+          height: 470,
+          autoPlay: true,
+          aspectRatio: 2.0,
+          enlargeCenterPage: true,
+          viewportFraction: 0.87,
+          enlargeStrategy: CenterPageEnlargeStrategy.height,
+        ),
+        items: List.generate(
+          10,
+          (index) => Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: double.infinity,
+              height: 500,
+              // color: Colors.blue,
+              decoration: BoxDecoration(
+                  borderRadius: constRadius7,
+                  image: DecorationImage(
+                      image: NetworkImage(
+                          homeScreenProvider.upcomingImages[index]),
+                      fit: BoxFit.cover)),
+            ),
+          ),
+        ),
       ),
       Positioned(
           bottom: 0,
@@ -30,22 +52,28 @@ class BackgroundCard extends StatelessWidget {
                 gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [Color.fromARGB(255, 0, 0, 0).withOpacity(0), Colors.black],
+              colors: [
+                Color.fromARGB(255, 0, 0, 0).withOpacity(0),
+                Colors.black
+              ],
             )),
           )),
       Positioned(
-        top: 0,
+        top: 8,
         left: 0,
         right: 0,
         child: Padding(
           padding: const EdgeInsets.only(bottom: 13),
           child: Container(
             height: 25,
-             decoration: BoxDecoration(
+            decoration: BoxDecoration(
                 gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [AppColors().darktheme, Color.fromARGB(255, 0, 0, 0).withOpacity(0)],
+              colors: [
+                AppColors().darktheme,
+                Color.fromARGB(255, 0, 0, 0).withOpacity(0)
+              ],
             )),
             // color: AppColors().darktheme,
             child: Row(

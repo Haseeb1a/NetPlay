@@ -2,12 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:netflix/view/hot_and_new/widgets/comming_soon.dart';
 import 'package:netflix/view/hot_and_new/widgets/everyone_watch.dart';
 import 'package:netflix/view/hot_and_new/widgets/tab_appbar.dart';
-// // import 'package:netflix/view/hot_and_comming/widgets/tab_appbar.dart';
-
-// import 'comming_soon.dart';
-// import 'everyone_watch.dart';
-// import '../widgets/tab_appbar.dart';
-
 class HotView extends StatefulWidget {
   const HotView({super.key});
 

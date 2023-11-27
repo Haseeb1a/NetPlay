@@ -48,8 +48,8 @@ class SearchIdelWidget extends StatelessWidget {
   }
 }
 class TopSearchTile extends StatelessWidget {
-  String imagelist;
-  TopSearchTile({super.key, required this.imagelist});
+  final  String imagelist;
+ const TopSearchTile({super.key, required this.imagelist});
 
   @override
   Widget build(BuildContext context) {
