@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:netflix/view/widgets/main_card.dart';
-import 'package:netflix/view/widgets/main_tilte.dart';
+import 'package:netflix/helpers/constants.dart';
+import 'package:netflix/widgets/main_tilte.dart';
 
 class MainTitileCard extends StatelessWidget {
   final String title;
+    final List<String> imageList; 
   const MainTitileCard({
     super.key,
-    required this.title
+    required this.title,
+      required this.imageList,
   });
 
   @override
@@ -26,7 +28,14 @@ class MainTitileCard extends StatelessWidget {
             maxHeight: 200,
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children: List.generate(10, (index) => const MainCard()),
+              children: List.generate(imageList.length, (index) => Container(
+    margin: const EdgeInsetsDirectional.symmetric(horizontal: 5),
+      width: 130,
+      height: 250,
+      decoration: BoxDecoration(
+          image:  DecorationImage(image: NetworkImage(imageList[index]),fit: BoxFit.cover),
+          borderRadius: constRadius5),
+    ),),
             ),
           )
         ],

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/helpers/colors.dart';
 import 'package:netflix/helpers/constants.dart';
-import 'package:netflix/view/widgets/video_widget.dart';
+import 'package:netflix/widgets/video_widget.dart';
 
 Widget buildComingSoon() {
   return Padding(
@@ -23,7 +23,7 @@ Widget buildComingSoon() {
               style: TextStyle(color: Colors.white, fontSize: 15,fontFamily: GoogleFonts.aBeeZee().fontFamily,),
             ),
             cHeight20,
-            const VideoWidget(),
+            //  VideoWidget(),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(

@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/controller/home_controller.dart';
 import 'package:netflix/helpers/colors.dart';
 import 'package:netflix/helpers/constants.dart';
 import 'package:netflix/view/home_page/widget/number_titile_card.dart';
-import 'package:netflix/view/widgets/background_card.dart';
-import 'package:netflix/view/widgets/horizontal_view.dart';
+import 'package:netflix/view/home_page/widget/background_card.dart';
+import 'package:netflix/widgets/horizontal_view.dart';
+import 'package:netflix/widgets/main_title_card.dart';
+import 'package:provider/provider.dart';
 
-import '../widgets/main_title_card.dart';
-
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  @override
   Widget build(BuildContext context) {
+     final homeScreenProvider = Provider.of<HomeScreenController>(context);
     return Scaffold(
         backgroundColor: Colors.black,
         body: Container(
@@ -31,22 +28,35 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.all(8.0),
             child: Stack(children: [
               ListView(
-                children: const [
+                children:  [
                   BackgroundCard(),
                   HorizontalList(
-                    title: 'Realse in post',
+                    title: 'Tv Popular',
+                    imageList: homeScreenProvider.tvPopularimages,
                   ),
                   cHeight10,
                   MainTitileCard(
                     title: 'Treading Now',
+                    imageList: homeScreenProvider.trendingImages,
                   ),
                  heightBox5,
-                  NumberTitleCard(),
-                  cHeight10,
-                  MainTitileCard(
-                    title: 'Treading Now',
+                  NumberTitleCard(
+                     imagesList: homeScreenProvider.topTenImages
                   ),
                   cHeight10,
+                  MainTitileCard(
+                    imageList:  homeScreenProvider.upcomingImages,
+                    title: 'Up comming',
+                  ),
+                  HorizontalList(
+                    title: 'Popular Moveis',
+                    imageList: homeScreenProvider.popularMoviesImages,
+                  ),
+                  // MainTitileCard(
+                  //   imageList:  homeScreenProvider.popularMoviesImages,
+                  //   title: 'Popular Moveis',
+                  // ),
+                  
                 ],
               ),
             ]),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/helpers/colors.dart';
 import 'package:netflix/view/downloads/widgets/download_details.dart';
-import 'package:netflix/view/widgets/app_bar_widget.dart';
+import 'package:netflix/widgets/app_bar_widget.dart';
 
 class Download extends StatelessWidget {
   Download({super.key});

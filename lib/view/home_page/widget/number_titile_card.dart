@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/view/home_page/widget/number_card.dart';
-import 'package:netflix/view/widgets/main_tilte.dart';
+import 'package:netflix/widgets/main_tilte.dart';
 
 class NumberTitleCard extends StatelessWidget {
+    final List<String> imagesList;
   const NumberTitleCard({
+    required this.imagesList,
     super.key,
   });
 
@@ -27,7 +29,7 @@ class NumberTitleCard extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               children: List.generate(
                 10,
-                (index) => NumberCard(index: index),
+                (index) => NumberCard(index: index,imagesList:imagesList),
               ),
             ))
       ],
