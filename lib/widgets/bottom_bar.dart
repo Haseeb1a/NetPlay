@@ -3,7 +3,7 @@ import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.da
 import 'package:netflix/helpers/colors.dart';
 import 'package:netflix/view/downloads/downloads.dart';
 import 'package:netflix/view/home_page/home_page.dart';
-import 'package:netflix/view/hot_and_comming/main_views.dart';
+import 'package:netflix/view/hot_and_new/main_views.dart';
 import 'package:netflix/view/search/searched.dart';
 
 class BottomBar extends StatefulWidget {

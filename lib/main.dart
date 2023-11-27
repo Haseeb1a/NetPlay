@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/controller/download_provider.dart';
 import 'package:netflix/controller/home_controller.dart';
+import 'package:netflix/controller/hot_new_controller.dart';
 import 'package:netflix/widgets/bottom_bar.dart';
 import 'package:provider/provider.dart';
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => DownloadScreenProvider()),
+             ChangeNotifierProvider(
+          create: (context) => HotAndNewController(),
+        ),
         ChangeNotifierProvider(
           create: (context) => HomeScreenController(),
         ),
