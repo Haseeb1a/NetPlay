@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:netflix/controller/search_controller.dart';
 import 'package:netflix/helpers/colors.dart';
 import 'package:netflix/helpers/constants.dart';
+import 'package:netflix/view/search/widgets/search_idie.dart';
 import 'package:netflix/view/search/widgets/search_result.dart';
+import 'package:provider/provider.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -12,8 +15,10 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+  
   @override
   Widget build(BuildContext context) {
+      final searchProvider = Provider.of<SearchsController>(context);
     return Scaffold(
       backgroundColor: AppColors().darktheme,
       body: SafeArea(
@@ -23,6 +28,9 @@ class _SearchScreenState extends State<SearchScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CupertinoSearchTextField(
+              onChanged: (value) {
+                  searchProvider.search(value);
+                },
               backgroundColor: AppColors().geryshade.withOpacity(0.4),
               prefixIcon:  Icon(
                 CupertinoIcons.search,
@@ -36,7 +44,11 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             cHeight10,
             // Expanded(child: SearchIdelWidget()),
-            const Expanded(child:SearchResultWidget() )
+            
+              Expanded(
+                  child: searchProvider.name.isEmpty
+                      ?  SearchIdelWidget()
+                      : const SearchResultWidget())
           ],
         ),
       )),
