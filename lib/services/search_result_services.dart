@@ -7,7 +7,7 @@ import 'package:netflix/services/api_endpont.dart';
 class SearchResultServices {
   List<MovieInfoModel> searchResult = [];
 
-  Future fetchSearchResult(String query) async {
+  Future<List<MovieInfoModel>?> fetchSearchResult(String query) async {
     try {
       final Dio dio = Dio();
       final response = await dio.get(ApiEndPoints.searchmovie + query);
@@ -24,6 +24,7 @@ class SearchResultServices {
       }
     } catch (error) {
       log('Error Encountered: $error');
+      return null;
     }
   }
 }

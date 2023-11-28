@@ -32,7 +32,7 @@ class SearchResultWidget extends StatelessWidget {
           Expanded(
             child: Consumer<SearchsController>(
               builder: (context, searchProvider, child) {
-                return GridView.builder(
+                return  searchProvider.searchResults.isEmpty?Center(child: Container(child: CircularProgressIndicator(),)): GridView.builder(
                   itemCount: searchProvider.searchResults.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisSpacing: 10,

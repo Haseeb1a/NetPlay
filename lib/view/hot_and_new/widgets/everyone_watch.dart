@@ -16,7 +16,7 @@ class EveryoneWatchingWidget extends StatelessWidget {
       itemCount: provider.everyonesWatching.length,
       itemBuilder: (context, index) {
         final MovieInfoModel data = provider.everyonesWatching[index];
-        return Padding(
+        return   provider.everyonesWatching.isEmpty?Center(child: Container(child: CircularProgressIndicator(),)) : Padding(
           padding:  const EdgeInsets.only(top: 25, left: 15, right: 10),
           child:  Column(
             crossAxisAlignment: CrossAxisAlignment.start, children: [

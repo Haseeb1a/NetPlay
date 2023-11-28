@@ -30,7 +30,7 @@ class SearchIdelWidget extends StatelessWidget {
         Expanded(
           child: Consumer<HomeScreenController>(
             builder: (context, provider, child) {
-              return GridView.count(
+              return provider.topTenImages.isEmpty?Center(child: Container(child: CircularProgressIndicator(),)) :GridView.count(
                   physics: const AlwaysScrollableScrollPhysics(),
                   mainAxisSpacing: 6,
                   childAspectRatio: 4 / 5,

@@ -3,14 +3,14 @@ import 'package:netflix/helpers/constants.dart';
 import 'package:netflix/widgets/main_tilte.dart';
 
 class HorizontalList extends StatelessWidget {
-   const HorizontalList({
+  final String title;
+  final List<String> imageList;
+  
+  const HorizontalList({
     required this.title,
     required this.imageList,
-     super.key,
-      });
-    final String title;
-   final List<String> imageList;
-  
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,18 +28,21 @@ class HorizontalList extends StatelessWidget {
           LimitedBox(
             maxHeight: 130,
             child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: List.generate(imageList.length, (index) =>   Container(
-      margin: const EdgeInsetsDirectional.symmetric(horizontal: 5),
-      width: 200,
-      height: 250,
-      decoration: BoxDecoration(
-          image:  DecorationImage(
-              image: NetworkImage(
-                  imageList[index]),
-              fit: BoxFit.cover),
-          borderRadius: constRadius5),),)
-            ),
+                scrollDirection: Axis.horizontal,
+                children: List.generate(
+                  imageList.length,
+                  (index) => Container(
+                    margin:
+                        const EdgeInsetsDirectional.symmetric(horizontal: 5),
+                    width: 200,
+                    height: 250,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: NetworkImage(imageList[index]),
+                            fit: BoxFit.cover),
+                        borderRadius: constRadius5),
+                  ),
+                )),
           )
         ],
       ),

@@ -15,17 +15,19 @@ class HomeScreenController extends ChangeNotifier {
 
   List<String> trendingImages = [];
   Future<void> getTrendingImages() async {
-    trendingImages = await PosterImageServices()
-        .getMoviePosterImage(ApiEndPoints.trendingMovies);
+    trendingImages = (await PosterImageServices()
+        .getMoviePosterImage(ApiEndPoints.trendingMovies))!;
     notifyListeners();
   }
+
+
 
   //Upcoming Movies
 
   List<String> upcomingImages = [];
   Future<void> getUpcomingImages() async {
     upcomingImages =
-        await PosterImageServices().getMoviePosterImage(ApiEndPoints.upcoming);
+        (await PosterImageServices().getMoviePosterImage(ApiEndPoints.upcoming))!;
     notifyListeners();
   }
 
@@ -34,7 +36,7 @@ class HomeScreenController extends ChangeNotifier {
   List<String> topTenImages = [];
   Future<void> getTopTenImages() async {
     topTenImages =
-        await PosterImageServices().getMoviePosterImage(ApiEndPoints.top10);
+        (await PosterImageServices().getMoviePosterImage(ApiEndPoints.top10))!;
     notifyListeners();
   }
 
@@ -43,7 +45,7 @@ class HomeScreenController extends ChangeNotifier {
   List<String> tvPopularimages = [];
   Future<void> getTvPopularImages() async {
     tvPopularimages =
-        await PosterImageServices().getMoviePosterImage(ApiEndPoints.tvPopular);
+        (await PosterImageServices().getMoviePosterImage(ApiEndPoints.tvPopular))!;
     notifyListeners();
   }
 
@@ -51,8 +53,8 @@ class HomeScreenController extends ChangeNotifier {
 
   List<String> popularMoviesImages = [];
   Future<void> getPopularMoviesImages() async {
-    popularMoviesImages = await PosterImageServices()
-        .getMoviePosterImage(ApiEndPoints.moviepopular);
+    popularMoviesImages = (await PosterImageServices()
+        .getMoviePosterImage(ApiEndPoints.moviepopular))!;
     notifyListeners();
   }
 }

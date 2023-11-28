@@ -15,13 +15,17 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
      final homeScreenProvider = Provider.of<HomeScreenController>(context);
     return Scaffold(
-        backgroundColor: Colors.black,
-        body: Container(
+        backgroundColor:AppColors().darktheme,
+        body:  homeScreenProvider.upcomingImages.isEmpty&&
+               homeScreenProvider.topTenImages.isEmpty&&
+               homeScreenProvider.tvPopularimages.isEmpty&&
+               homeScreenProvider.popularMoviesImages.isEmpty&&
+               homeScreenProvider.trendingImages.isEmpty ? Center(child: Container( child: CircularProgressIndicator(),)):  Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: NetworkImage(
                   'https://i.pinimg.com/736x/1d/d9/cb/1dd9cba6ce2e105983ab53146e053153.jpg'),
-              fit: BoxFit.cover, // Adjust this based on your requirements
+              fit: BoxFit.cover, 
             ),
           ),
           child: Padding(

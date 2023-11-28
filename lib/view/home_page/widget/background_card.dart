@@ -12,7 +12,7 @@ class BackgroundCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final homeScreenProvider = Provider.of<HomeScreenController>(context);
+    final homeDataProvider = Provider.of<HomeScreenController>(context);
     final Size size = MediaQuery.of(context).size;
     return Stack(children: [
       CarouselSlider(
@@ -25,7 +25,7 @@ class BackgroundCard extends StatelessWidget {
           enlargeStrategy: CenterPageEnlargeStrategy.height,
         ),
         items: List.generate(
-          10,
+          homeDataProvider.upcomingImages.length,
           (index) => Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
@@ -36,7 +36,7 @@ class BackgroundCard extends StatelessWidget {
                   borderRadius: constRadius7,
                   image: DecorationImage(
                       image: NetworkImage(
-                          homeScreenProvider.upcomingImages[index]),
+                          homeDataProvider.upcomingImages[index]),
                       fit: BoxFit.cover)),
             ),
           ),

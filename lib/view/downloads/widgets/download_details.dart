@@ -11,10 +11,9 @@ class DownloadInformation2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final downloadScreenProvider =
-        Provider.of<HomeScreenController>(context, listen: true);
+    final downloadData =Provider.of<HomeScreenController>(context, listen: true);
     final Size size = MediaQuery.of(context).size;
-    return downloadScreenProvider.trendingImages.length < 3
+    return downloadData.trendingImages.length < 3
         ? const Center(
             child: CircularProgressIndicator(),
           )

@@ -5,9 +5,7 @@ import 'package:netflix/model/movie_info.dart';
 import 'package:netflix/model/tmdb_api_response.dart';
 
 class PosterImageServices {
-  // function for GET poster images based on url
-
-  Future<List<String>> getMoviePosterImage(String url) async {
+  Future<List<String>?> getMoviePosterImage(String url) async {
     try {
       final Dio dio = Dio();
       List<String> imageList = [];
@@ -26,11 +24,11 @@ class PosterImageServices {
         }
         return imageList;
       } else {
-        return [];
+        return null;
       }
     } catch (error) {
       log('error encountered ${error.toString()}');
-      throw "error";
+      return null;
     }
   }
 }

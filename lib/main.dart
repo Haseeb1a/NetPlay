@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix/controller/bottom_controller.dart';
 import 'package:netflix/controller/home_controller.dart';
 import 'package:netflix/controller/hot_new_controller.dart';
 import 'package:netflix/controller/search_controller.dart';
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => SearchsController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => BottomController(),
         ),
       ],
       child: MaterialApp(

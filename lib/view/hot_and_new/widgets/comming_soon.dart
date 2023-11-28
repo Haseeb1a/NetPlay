@@ -13,42 +13,42 @@ class CommingSoonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<HotAndNewController>(context);
+    final upcommingProvider = Provider.of<HotAndNewController>(context);
     final Size size = MediaQuery.of(context).size;
-    return Padding(
+    return  upcommingProvider.upcoming.isEmpty?Center(child: Container(child: CircularProgressIndicator(),)) :Padding(
       padding: const EdgeInsets.only(
         top: 22,
       ),
       child: ListView.builder(
-        itemCount: provider.upcoming.length,
+
+        itemCount: upcommingProvider.upcoming.length,
         itemBuilder: (context, index) {
-          final MovieInfoModel data = provider.upcoming[index];
+          final MovieInfoModel data = upcommingProvider.upcoming[index];
           return Row(
             children: [
               SizedBox(
                 width: 50,
-                height: 420,
+                height: 430,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Text(
-                      'FEB',
-                      style: TextStyle(color: Colors.grey, fontSize: 15),
-                    ),
-                    Text(
-                      '11',
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors().whitetheme,
-                          letterSpacing: 4),
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Text(
+                        upcommingProvider.fetchDate(data.releaseDate!),
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors().whitetheme,
+                            letterSpacing: 4),
+                      ),
                     )
                   ],
                 ),
               ),
               SizedBox(
                 width: size.width - 50,
-                height: 420,
+                height: 430,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -84,18 +84,22 @@ class CommingSoonWidget extends StatelessWidget {
                       )
                     ]),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             overflow: TextOverflow.ellipsis,
                             maxLines: 4,
-                            data.originalTitle.toString(),
+                            data.originalTitle.toString().length > 22
+                                ? '${data.originalTitle.toString().substring(0, 19)}...'
+                                : data.originalTitle.toString(),
+                            // data.originalTitle.toString(),
                             style: TextStyle(
+                                fontFamily: GoogleFonts.montserrat().fontFamily,
                                 color: AppColors().whitetheme,
                                 // fontSize: 28,
-                                fontSize: size.width * 0.029,
+                                fontSize: size.width * 0.05,
                                 fontWeight: FontWeight.bold),
                           ),
                           const Spacer(),
@@ -113,8 +117,29 @@ class CommingSoonWidget extends StatelessWidget {
                         ],
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text.rich(
+                        TextSpan(
+                            text: "Coming On   ",
+                            style: TextStyle(
+                              color: AppColors().primarytheme,
+                              fontFamily: GoogleFonts.montserrat().fontFamily,
+                            ),
+                            children: [
+                              TextSpan(
+                                  text: upcommingProvider
+                                      .fetchDay(data.releaseDate!),
+                                  style: TextStyle(
+                                      color: AppColors().redtheme,
+                                      fontFamily:
+                                          GoogleFonts.montserrat().fontFamily,
+                                      fontSize: 18))
+                            ]),
+                      ),
+                    ),
                     const SizedBox(
-                      height: 20,
+                      height: 5,
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
