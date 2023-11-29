@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:netflix/controller/bottom_controller.dart';
@@ -6,6 +7,7 @@ import 'package:netflix/view/downloads/downloads.dart';
 import 'package:netflix/view/home_page/home_page.dart';
 import 'package:netflix/view/hot_and_new/main_views.dart';
 import 'package:netflix/view/search/searched.dart';
+import 'package:netflix/view/shors/shorts.dart';
 import 'package:provider/provider.dart';
 
 class BottomBar extends StatefulWidget {
@@ -21,7 +23,9 @@ class _BottomBarState extends State<BottomBar> {
   final List<Widget> bottomBarBarPages = [
     const Home(),
     const HotView(),
+    const ShortLIstpage(),
     Download(),
+     
     const SearchScreen()
   ];
 
@@ -54,6 +58,10 @@ class _BottomBarState extends State<BottomBar> {
               FloatingNavbarItem(
                 icon: Icons.movie_filter,
                 title: 'views',
+              ),
+              FloatingNavbarItem(
+                icon: Icons.video_library_rounded,
+                title: 'Shorts',
               ),
               FloatingNavbarItem(icon: Icons.download, title: 'Downloads'),
               FloatingNavbarItem(icon: Icons.search, title: 'search'),
